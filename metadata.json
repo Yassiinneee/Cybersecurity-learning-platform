@@ -1,0 +1,6 @@
+{
+  "name": "CyberNexus",
+  "description": "Enterprise-grade gamified cybersecurity learning platform with interactive labs, a simulated Kali terminal, CTFs, and an AI Cyber Assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

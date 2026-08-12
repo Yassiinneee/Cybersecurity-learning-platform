@@ -1,0 +1,32 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profiles",
+      "description": "User profile data and settings.",
+      "type": "object",
+      "properties": {
+        "username": { "type": "string" },
+        "email": { "type": "string" },
+        "age": { "type": "number" },
+        "location": { "type": "string" },
+        "gender": { "type": "string" },
+        "level": { "type": "number" },
+        "xp": { "type": "number" },
+        "role": { "type": "string" }
+      },
+      "required": ["email", "username"]
+    },
+    "certificates": {
+      "title": "Certificates",
+      "description": "Issued course completion certificates.",
+      "type": "object",
+      "properties": {
+        "certificateId": { "type": "string" },
+        "studentName": { "type": "string" },
+        "courseTitle": { "type": "string" },
+        "issueDate": { "type": "string" }
+      },
+      "required": ["certificateId", "studentName"]
+    }
+  }
+}

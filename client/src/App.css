@@ -1,0 +1,30 @@
+/* Keyframes and styles extracted from App.jsx */
+
+@keyframes radarSweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar-sweep {
+  transform-origin: 50px 50px;
+  animation: radarSweep 10s linear infinite;
+}
+
+@keyframes scanLine {
+  0% {
+    top: 0%;
+    opacity: 0.1;
+  }
+  50% {
+    top: 100%;
+    opacity: 0.8;
+  }
+  100% {
+    top: 0%;
+    opacity: 0.1;
+  }
+}
