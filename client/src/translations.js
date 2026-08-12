@@ -17,6 +17,7 @@ export const translations = {
       verification: "Certificates",
       about: "About",
       contact: "Contact",
+      tools: "Tools",
       admin: "Admin",
       instructor: "Instructor"
     },
@@ -269,6 +270,7 @@ export const translations = {
       verification: "Certificats",
       about: "À propos",
       contact: "Contact",
+      tools: "Outils",
       admin: "Admin",
       instructor: "Instructeur"
     },
