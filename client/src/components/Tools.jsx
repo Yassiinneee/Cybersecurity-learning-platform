@@ -139,16 +139,71 @@ export default function Tools({ language = 'en' }) {
       features: isFr
         ? ['Décompilateur C/C++', 'Support Multi-Architectures', 'API de scripting Java/Python', 'Analyseur en mode headless']
         : ['C/C++ Decompiler', 'Multi-Architecture Assembly', 'Java & Python Scripting', 'Headless Batch Analyzer']
+    },
+    {
+      id: 'hydra',
+      name: 'THC-Hydra',
+      category: 'audit',
+      categoryLabel: isFr ? 'Attaque par Force Brute' : 'Brute-Force & Auth Audit',
+      badge: 'BRUTE-FORCE AUDIT',
+      badgeColor: 'from-rose-500/20 to-red-500/20 text-rose-400 border-rose-500/30',
+      accentColor: '#f43f5e',
+      image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80',
+      logoText: 'THC HYDRA',
+      url: 'https://github.com/vanhauser-thc/thc-hydra',
+      description: isFr
+        ? "Un outil de réapprentissage de mots de passe en réseau extrêmement rapide capable d'exécuter des attaques par force brute parallèles sur plus de 50 protocoles réseau."
+        : "A world-renowned fast network logon cracker capable of performing rapid parallelized brute-force attacks across over 50 network protocols including SSH, FTP, HTTP, and databases.",
+      features: isFr
+        ? ['50+ Protocoles supportés', 'Attaques multi-threads', 'Interruption & Reprise', 'Fuzzing d\'authentification']
+        : ['50+ Protocols Supported', 'Parallelized Threads', 'Pause & Resume Attacks', 'Auth Fuzzing']
+    },
+    {
+      id: 'sqlmap',
+      name: 'SQLmap',
+      category: 'web',
+      categoryLabel: isFr ? 'Injection SQL & Base de Données' : 'SQL Injection & Database',
+      badge: 'DATABASE INJECTION',
+      badgeColor: 'from-amber-500/20 to-yellow-500/20 text-yellow-400 border-yellow-500/30',
+      accentColor: '#eab308',
+      image: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=800&q=80',
+      logoText: 'SQLMAP',
+      url: 'https://sqlmap.org/',
+      description: isFr
+        ? "Un outil open source puissant qui automatise la détection et l'exploitation des vulnérabilités d'injection SQL ainsi que la prise de contrôle des serveurs de base de données."
+        : "An open-source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over database servers.",
+      features: isFr
+        ? ['6 Techniques SQLi', 'Extraction automatique de DB', 'Dump de hachages', 'Shell système à distance']
+        : ['6 SQL Injection Techniques', 'Automated DB Enumeration', 'Password Hash Dumping', 'Remote OS Shell Execution']
+    },
+    {
+      id: 'aircrack',
+      name: 'Aircrack-ng',
+      category: 'wireless',
+      categoryLabel: isFr ? 'Sécurité Sans Fil Wi-Fi' : 'Wireless & Wi-Fi Security',
+      badge: 'WIRELESS SECURITY',
+      badgeColor: 'from-teal-500/20 to-emerald-500/20 text-teal-300 border-teal-500/30',
+      accentColor: '#14b8a6',
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80',
+      logoText: 'AIRCRACK-NG',
+      url: 'https://www.aircrack-ng.org/',
+      description: isFr
+        ? "Une suite complète d'outils pour évaluer la sécurité des réseaux sans fil Wi-Fi (802.11), couvrant la capture de paquets, l'injection de trames et le cassage de clés WPA/WPA2/WPA3."
+        : "A complete suite of tools to assess Wi-Fi network security (802.11), supporting packet capture, frame injection, dictionary cracking, and WPA/WPA2/WPA3 key recovery.",
+      features: isFr
+        ? ['Capture 802.11 & Injection', 'Cassage WPA/WPA2/WPA3', 'Détection de Rogue AP', 'Analyse du signal RF']
+        : ['802.11 Capture & Injection', 'WPA/WPA2/WPA3 Key Recovery', 'Rogue AP Detection', 'RF Signal Monitoring']
     }
   ];
 
   const categories = [
-    { id: 'all', name: isFr ? 'Tous les outils (7)' : 'All Tools (7)' },
+    { id: 'all', name: isFr ? `Tous les outils (${toolsData.length})` : `All Tools (${toolsData.length})` },
     { id: 'recon', name: isFr ? 'Reconnaissance' : 'Recon & Network' },
     { id: 'web', name: isFr ? 'Sécurité Web' : 'Web Security' },
     { id: 'offensive', name: isFr ? 'Offensif / Pentest' : 'Offensive & Exploitation' },
     { id: 'analysis', name: isFr ? 'Analyse de Trafic' : 'Traffic Analysis' },
-    { id: 'audit', name: isFr ? 'Audit de Mots de Passe' : 'Credential Audit' },
+    { id: 'audit', name: isFr ? 'Audit / Mots de Passe' : 'Credential Audit' },
+    { id: 'wireless', name: isFr ? 'Sécurité Wi-Fi' : 'Wireless Security' },
     { id: 'reverse', name: isFr ? 'Rétro-Ingénierie' : 'Reverse Engineering' }
   ];
 
@@ -181,8 +236,8 @@ export default function Tools({ language = 'en' }) {
         </h2>
         <p className="text-[var(--text-muted)] text-sm sm:text-base leading-relaxed">
           {isFr
-            ? 'Explorez notre sélection des 7 outils fondamentaux de cybersécurité utilisés quotidiennement par les experts en audit, tests d\'intrusion et analyse forensique.'
-            : 'Explore our curated index of 7 premier industry-standard cybersecurity tools used daily by ethical hackers, penetration testers, and SOC analysts worldwide.'}
+            ? `Explorez notre sélection des ${toolsData.length} outils fondamentaux de cybersécurité utilisés quotidiennement par les experts en audit, tests d'intrusion et analyse forensique.`
+            : `Explore our curated index of ${toolsData.length} premier industry-standard cybersecurity tools used daily by ethical hackers, penetration testers, and SOC analysts worldwide.`}
         </p>
       </div>
 
@@ -276,7 +331,7 @@ export default function Tools({ language = 'en' }) {
 
                 {/* Index Tag Top Right */}
                 <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md border border-white/10 text-white/70 font-mono text-[10px] font-bold px-2 py-0.5 rounded-md">
-                  0{idx + 1} / 07
+                  {(idx + 1).toString().padStart(2, '0')} / {toolsData.length.toString().padStart(2, '0')}
                 </div>
 
                 {/* Tool Name Overlay */}
