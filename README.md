@@ -1142,6 +1142,24 @@ Review and update the license section if the project is redistributed under a di
 
 ---
 
+
+#  Author
+
+Yassine Kaltoum
+
+Software & Network Engineering
+
+Focus Areas
+Software Engineering
+Front-End Development
+Web Performance
+UI/UX Engineering
+System Architecture
+Network Engineering
+Cybersecurity
+
+---
+
 # ⭐ Final Note
 
 CyberNexus is more than a conventional course website: it is designed as an integrated cybersecurity learning environment that combines **education, simulation, practical exercises, AI assistance, gamification, real-time telemetry, administration, and assessment**.
