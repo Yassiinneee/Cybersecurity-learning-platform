@@ -7,7 +7,7 @@ import {
   Trophy, User, Search, Send, Loader2, Sparkles, ExternalLink, 
   ArrowRight, Copy, Check, Info, FileText, Radar, Database, Globe, Key, Eye, Sword, Zap, Clock, AlertCircle, RefreshCcw,
   Printer, Download, Share2, Home, Mail, Sun, Moon, Crown, GraduationCap, Settings, MapPin, Calendar,
-  Bell, BellOff, Volume2, VolumeX, Trash2, Filter, MessageSquare, Radio, QrCode
+  Bell, BellOff, Volume2, VolumeX, Trash2, Filter, MessageSquare, Radio, QrCode, Wrench
 } from 'lucide-react';
 import { downloadCertificatePDF } from './utils/pdfGenerator';
 import { ALL_LEARNING_PATHS, ALL_LABS, ALL_CTFS, ALL_ACHIEVEMENTS, INITIAL_PROFILE, MOCK_LEADERBOARD } from './data';
@@ -16,6 +16,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import About from './components/about';
 import Contact from './components/contact';
+import Tools from './components/Tools';
 import Admin from './components/Admin';
 import Instructor from './components/Instructor';
 import Live from './components/Live';
@@ -1658,6 +1659,7 @@ export default function App() {
               { id: 'verification', icon: Award, label: tr('nav.certificates', 'Certificates') },
               { id: 'about', icon: Info, label: tr('nav.about', 'About') },
               { id: 'contact', icon: Mail, label: tr('nav.contact', 'Contact') },
+              { id: 'tools', icon: Wrench, label: tr('nav.tools', 'Tools') },
               ...(isInstructorUser ? [{ id: 'instructor', icon: GraduationCap, label: tr('nav.instructor', 'Instructor') }] : []),
               ...(isAdminUser ? [{ id: 'admin', icon: Crown, label: tr('nav.admin', 'Admin') }] : [])
             ];
@@ -2034,6 +2036,11 @@ export default function App() {
           {/* --- CONTACT TAB --- */}
           {activeTab === 'contact' && (
             <Contact language={language} />
+          )}
+
+          {/* --- TOOLS TAB --- */}
+          {activeTab === 'tools' && (
+            <Tools language={language} />
           )}
 
           {/* --- ADMIN TAB --- */}
