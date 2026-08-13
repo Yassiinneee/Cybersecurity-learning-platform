@@ -18,6 +18,7 @@ export const translations = {
       about: "About",
       contact: "Contact",
       tools: "Tools",
+      roadmap: "Roadmap",
       admin: "Admin",
       instructor: "Instructor"
     },
@@ -271,6 +272,7 @@ export const translations = {
       about: "À propos",
       contact: "Contact",
       tools: "Outils",
+      roadmap: "Roadmap",
       admin: "Admin",
       instructor: "Instructeur"
     },
