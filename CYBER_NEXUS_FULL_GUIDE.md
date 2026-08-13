@@ -1,5 +1,4 @@
 # CYBERNEXUS PLATFORM: ARCHITECTURE, SECURITY & SYSTEM MANUAL
-> **Version:** 2.6.0 | **Classification:** Technical Reference & Deployment Manual  
 > **Platform:** Full-Stack Cybersecurity Learning Platforme
 
 ---
