@@ -1,329 +1,398 @@
-# 🛡️ CyberNexus — Cybersecurity Learning Platform
+
+# 🛡️ CyberNexus — AI-Powered Cybersecurity Learning Platform
 
 <div align="center">
 
-**An interactive, AI-powered cybersecurity education and hands-on training platform**
+<img src="https://img.shields.io/badge/CyberNexus-Cybersecurity%20Learning%20Platform-00d4ff?style=for-the-badge&logo=hackthebox&logoColor=white" alt="CyberNexus">
 
-[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react\&logoColor=white)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite-6-646CFF?logo=vite\&logoColor=white)](https://vitejs.dev/)
-[![Node.js](https://img.shields.io/badge/Node.js-20%2B-339933?logo=node.js\&logoColor=white)](https://nodejs.org/)
-[![Express](https://img.shields.io/badge/Express-4-000000?logo=express\&logoColor=white)](https://expressjs.com/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb\&logoColor=white)](https://www.mongodb.com/)
-[![Socket.IO](https://img.shields.io/badge/Socket.IO-4-010101?logo=socket.io\&logoColor=white)](https://socket.io/)
-[![Google%20Gemini](https://img.shields.io/badge/AI-Google%20Gemini-4285F4?logo=google\&logoColor=white)](https://ai.google.dev/)
-[![JavaScript](https://img.shields.io/badge/JavaScript-ESM-F7DF1E?logo=javascript\&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Security](https://img.shields.io/badge/Security-Defense--in--Depth-red)](#-security-architecture)
-[![License](https://img.shields.io/badge/License-ISC-blue)](#-license)
+<br><br>
+
+<img src="https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React">
+<img src="https://img.shields.io/badge/Node.js-Backend-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node.js">
+<img src="https://img.shields.io/badge/Express.js-4.x-000000?style=flat-square&logo=express&logoColor=white" alt="Express">
+<img src="https://img.shields.io/badge/MongoDB-Atlas-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB">
+<img src="https://img.shields.io/badge/Redis-Caching-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis">
+<img src="https://img.shields.io/badge/Socket.IO-Realtime-010101?style=flat-square&logo=socket.io&logoColor=white" alt="Socket.IO">
+<img src="https://img.shields.io/badge/Google%20Gemini-AI-4285F4?style=flat-square&logo=google&logoColor=white" alt="Gemini">
+<img src="https://img.shields.io/badge/Google%20Cloud-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Google Cloud">
+
+<br>
+
+<img src="https://img.shields.io/badge/Security-OWASP%20Focused-critical?style=flat-square&logo=owasp" alt="Security">
+<img src="https://img.shields.io/badge/Security-Defense%20in%20Depth-red?style=for-the-badge&logo=shield&logoColor=white" alt="Security - Defense in Depth">
+<img src="https://img.shields.io/badge/Authentication-JWT%20%7C%20OAuth-orange?style=flat-square" alt="Authentication">
+<img src="https://img.shields.io/badge/License-ISC-blue?style=flat-square" alt="License">
+
+<br><br>
+
+**An interactive, AI-powered cybersecurity education platform combining structured learning, hands-on laboratories, CTF challenges, real-time collaboration, AI assistance, gamification, and enterprise-grade security controls.**
 
 </div>
 
 ---
 
-## 📌 Overview
+## 📑 Table of Contents
 
-**CyberNexus** is a full-stack cybersecurity learning platform designed to combine structured security education, interactive simulations, hands-on labs, CTF-style challenges, AI-assisted learning, real-time security telemetry, and learner progression into a single application.
-
-The platform is built as a modern JavaScript application with a React/Vite frontend and a modular Node.js/Express backend. It includes authentication, role-based administration, instructor dashboards, learning paths, quizzes, practical laboratories, certificate generation and verification, payments, real-time Socket.IO events, Redis integration, MongoDB persistence, and a Google Gemini-powered cyber tutor.
-
-> **Educational purpose:** The platform is intended for authorized cybersecurity education, defensive security training, controlled laboratories, and security awareness. Practical exercises should only be executed against systems you own or are explicitly authorized to test.
+* [Overview](#-overview)
+* [Project Vision](#-project-vision)
+* [Key Features](#-key-features)
+* [Platform Architecture](#-platform-architecture)
+* [Technology Stack](#-technology-stack)
+* [Project Structure](#-project-structure)
+* [Security Architecture](#-security-architecture)
+* [Role-Based Access Control](#-role-based-access-control)
+* [Learning System](#-learning-system)
+* [Gamification & XP](#-gamification--xp)
+* [AI Cybersecurity Assistant](#-ai-cybersecurity-assistant)
+* [Hands-On Labs & CTFs](#-hands-on-labs--ctfs)
+* [Real-Time Communication](#-real-time-communication)
+* [Certificates](#-certificates)
+* [Payment System](#-payment-system)
+* [Internationalization](#-internationalization)
+* [API Overview](#-api-overview)
+* [Database Architecture](#-database-architecture)
+* [Environment Variables](#-environment-variables)
+* [Installation](#-installation)
+* [Development](#-development)
+* [Production Build](#-production-build)
+* [Docker](#-docker)
+* [Deployment](#-deployment)
+* [Security Best Practices](#-security-best-practices)
+* [Screenshots](#-screenshots)
+* [Troubleshooting](#-troubleshooting)
+* [Future Improvements](#-future-improvements)
+* [Contributing](#-contributing)
+* [Acknowledgments](#-acknowledgments)
+* [License](#-license)
 
 ---
 
-## 🎯 Project Objectives
+# 🌐 Overview
 
-CyberNexus is designed around five core objectives:
+**CyberNexus** is a full-stack cybersecurity learning platform designed to transform traditional cybersecurity education into an interactive, practical, and gamified experience.
 
-1. **Learn** — Provide structured cybersecurity lessons with progressive difficulty.
-2. **Practice** — Transform theoretical concepts into controlled, interactive exercises.
-3. **Challenge** — Use quizzes, labs, CTF-style tasks, XP, achievements, and levels to reinforce learning.
-4. **Assist** — Provide an AI cybersecurity tutor capable of explaining security concepts and assisting with learning workflows.
-5. **Measure** — Track progress, performance, activity, certificates, leaderboards, and instructor/admin metrics.
+Instead of limiting learners to theoretical content, CyberNexus combines:
+
+* 📚 Structured cybersecurity courses
+* 🧪 Hands-on cybersecurity laboratories
+* 🚩 Jeopardy-style CTF challenges
+* 🖥️ Interactive cybersecurity diagrams
+* 🐉 Kali Linux-style terminal experience
+* 🤖 AI-powered cybersecurity assistance
+* 💬 Real-time communication
+* 📊 Student progress analytics
+* 🏆 XP, levels, achievements, and streaks
+* 🎓 Digital certificate generation
+* 🔐 Secure authentication
+* 👨‍🏫 Instructor management
+* 👑 Administrative control
+* 💳 Paid course unlocking
+* 🌍 English/French localization
+* 🌗 Dark/Light themes
+
+The platform is built around a practical philosophy:
+
+> **Learn → Practice → Attack → Defend → Analyze → Progress**
 
 ---
 
-## ✨ Core Features
+# 🎯 Project Vision
 
-### 🎓 Learning Management
+Cybersecurity knowledge cannot be effectively acquired through theory alone.
 
-* Structured cybersecurity learning paths
-* Modular lessons with objectives and reading material
-* Difficulty levels and estimated lesson duration
-* Interactive security diagrams
-* Lesson quizzes with multiple question formats
+CyberNexus was designed to provide learners with an environment where they can progressively develop cybersecurity capabilities through:
+
+1. **Conceptual learning**
+2. **Interactive demonstrations**
+3. **Hands-on laboratory exercises**
+4. **CTF challenges**
+5. **Real-world security scenarios**
+6. **AI-assisted learning**
+7. **Performance tracking**
+8. **Gamified progression**
+
+The long-term objective is to provide a centralized cybersecurity training ecosystem suitable for:
+
+* Students
+* Cybersecurity beginners
+* Security enthusiasts
+* Developers
+* Network engineers
+* SOC analysts
+* Penetration testers
+* Security instructors
+* Training organizations
+
+---
+
+# ✨ Key Features
+
+## 📚 Interactive Learning
+
+CyberNexus provides structured learning paths covering cybersecurity fundamentals and practical security concepts.
+
+Learners can access:
+
+* Lessons
+* Quizzes
+* Learning paths
 * Progress tracking
-* XP-based progression system
-* Achievements and leaderboard mechanics
-* Expert/advanced course unlocking
+* Interactive diagrams
+* Security tools
+* Cybersecurity roadmaps
+* Achievement systems
 
-### 🧪 Practical Cybersecurity Labs
+---
 
-The platform includes controlled security-learning exercises covering areas such as:
+## 🧪 Hands-On Cybersecurity Labs
 
-* SQL Injection
-* Cross-Site Scripting (XSS)
-* NoSQL Injection
-* CSRF and session defense
-* Web application security
-* Defensive security concepts
-* Security telemetry and incident-oriented exercises
+The platform emphasizes practical learning through cybersecurity laboratories.
 
-Labs can include:
+Learners can work through:
 
-* Instructions
-* Hints
-* Target information
-* Flags
-* Task validation
-* Completion rewards
+* Security exercises
+* Practical challenges
+* Network security scenarios
+* Web security concepts
+* Defensive security exercises
+* Offensive security exercises
+* Lab progression
 
-### 🚩 CTF-Style Training
+---
 
-CyberNexus supports challenge-based learning through CTF-style activities, including:
+## 🚩 CTF Challenges
 
-* Difficulty tiers
-* Flag submission
-* Hints
-* Challenge completion
-* XP rewards
-* Progress tracking
+CyberNexus integrates Capture The Flag challenges using a difficulty-based progression system.
 
-### 💻 Kali-Style Terminal Simulator
+Supported difficulty levels include:
 
-The frontend includes a simulated cybersecurity terminal designed for educational interaction.
+* 🟢 Easy
+* 🟡 Medium
+* 🟠 Hard
+* 🔴 Insane
 
-It provides:
+Successful challenge completion contributes to the learner's XP and overall progression.
 
-* Command-style navigation
-* Simulated cyber utilities
-* Terminal history
-* Working-directory state
-* Nested-session simulation
-* Learning-oriented command responses
+---
 
-> The terminal is a controlled simulator and should not be interpreted as a real privileged Kali Linux environment.
+## 🖥️ Cybersecurity Terminal
 
-### 🤖 Nexus AI Cyber Tutor
+The platform includes an interactive terminal-style environment designed to provide learners with a familiar cybersecurity command-line experience.
 
-The platform integrates Google Gemini through the Google GenAI SDK.
+The interface can be used for security-related exercises such as:
 
-The AI assistant is designed to help learners:
+* Network reconnaissance
+* Nmap demonstrations
+* Command-line learning
+* Security experimentation
+* Practical laboratory exercises
+
+---
+
+## 🤖 Nexus AI
+
+CyberNexus includes an AI-powered cybersecurity assistant called **Nexus AI**.
+
+The assistant is designed to help learners:
 
 * Understand cybersecurity concepts
-* Interpret security logs
-* Learn security tooling concepts
-* Explain attack and defense flows
-* Analyze educational packet/log examples
-* Navigate learning content
+* Analyze security questions
+* Navigate learning modules
 * Receive contextual explanations
+* Learn security terminology
+* Explore defensive and offensive security concepts
 
-The server-side AI integration is implemented through a dedicated service/configuration layer rather than exposing the API key to the browser.
+The backend integrates Google's Generative AI ecosystem to provide AI-powered responses.
 
-### 🔐 Authentication & Authorization
+---
 
-The backend includes authentication infrastructure using:
+## 💬 Real-Time Communication
 
-* Express sessions
-* Passport.js
-* Passport Google OAuth support
-* JWT support
-* HTTP-only cookies
-* bcrypt password hashing
-* Role-aware application flows
+CyberNexus uses **Socket.IO** to provide real-time functionality.
 
-Supported application roles include:
+Features include:
 
-* **Student**
-* **Instructor**
-* **Admin**
+* Live chat
+* Security activity feeds
+* Real-time user activity
+* Live system notifications
+* Connected-user monitoring
+* Real-time security events
 
-### 👨‍🏫 Instructor Dashboard
+---
 
-Instructor functionality includes:
+## 👨‍🏫 Instructor Dashboard
 
-* Class-level statistics
-* Student activity
-* Learning progress
-* Lab completion metrics
-* Submission inspection
+Instructors can monitor learner activity through a dedicated instructor interface.
 
-### 🛡️ Admin Dashboard
+Capabilities include:
+
+* Student monitoring
+* Progress analytics
+* Lab submissions
+* Class performance
+* Learning activity
+* Student roster management
+
+---
+
+## 👑 Administration Panel
+
+Administrators have access to centralized platform management.
 
 Administrative capabilities include:
 
-* Platform overview
 * User management
 * Role management
-* XP/level/streak management
-* Account banning/unbanning
+* Account banning/restoration
 * User deletion
-* Security/HTTP log inspection
-* Security log maintenance
-
-### 📡 Real-Time Security Intelligence
-
-Socket.IO powers real-time platform events such as:
-
-* Active-user/node counts
-* Security feed updates
-* Live event notifications
-* Real-time activity feed
-* Toast notifications
-* Optional notification sounds
-
-### 🏆 Gamification
-
-The platform includes a progression model based on XP, levels, achievements, and streaks.
-
-Example progression:
-
-| Level | Title                  | XP Required |
-| :---: | ---------------------- | ----------: |
-|   1   | Novice / Script Kiddie |           0 |
-|   2   | Apprentice             |       1,000 |
-|   3   | Junior Operator        |       2,000 |
-|   4   | Cyber Practitioner     |       3,000 |
-|   5   | Security Analyst       |       4,000 |
-|   6   | Penetration Tester     |       5,000 |
-|   7   | Senior Specialist      |       6,000 |
-|   8   | Threat Hunter          |       7,000 |
-|   9   | Cyber Architect        |       8,000 |
-|  10+  | Elite                  |      9,000+ |
-
-XP can be earned through:
-
-* Lessons and quizzes
-* Practical labs
-* CTF challenges
-* Completion milestones
-* Streak activity
-
-### 📜 Certificates
-
-The application includes certificate functionality with:
-
-* PDF certificate generation
-* Certificate identifiers
-* QR-code support
-* Certificate verification endpoint
-* Verification service
-* Learner achievement records
-
-### 🌍 Internationalization & UX
-
-The frontend includes:
-
-* English/French language support
-* Dark/light theme support
-* Responsive interface
-* Persistent user preferences
-* Interactive dashboards
-* Modern iconography
-* Motion/animation support
-* Accessible state feedback
+* XP modification
+* Level management
+* Security logs
+* Platform statistics
+* Audit information
 
 ---
 
-# 🏗️ Architecture
+# 🏗️ Platform Architecture
 
-CyberNexus follows a modular full-stack architecture:
+CyberNexus follows a full-stack architecture composed of a React presentation layer, Node.js/Express application server, MongoDB persistence layer, Redis caching infrastructure, Socket.IO real-time communication, and external AI/payment/email services.
 
 ```text
-┌─────────────────────────────────────────────────────────────┐
-│                        CYBERNEXUS                           │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  React + Vite Frontend                                      │
-│  ├── Learning UI                                            │
-│  ├── Authentication                                         │
-│  ├── Labs / CTFs                                            │
-│  ├── Terminal Simulator                                     │
-│  ├── AI Chat                                                │
-│  ├── Admin / Instructor Dashboards                          │
-│  └── Real-Time Client                                       │
-│                     │                                       │
-│                     ▼                                       │
-│  Node.js + Express API                                      │
-│  ├── Authentication / Authorization                         │
-│  ├── Learning APIs                                          │
-│  ├── Admin APIs                                             │
-│  ├── Instructor APIs                                        │
-│  ├── Chat / AI APIs                                         │
-│  ├── Payment APIs                                           │
-│  ├── Certificate Verification                               │
-│  └── Health / Status APIs                                   │
-│                     │                                       │
-│          ┌──────────┼───────────┐                           │
-│          ▼          ▼           ▼                           │
-│      MongoDB      Redis     Google Gemini                   │
-│      Database     Cache       AI Service                    │
-│                                                             │
-│                 Socket.IO                                   │
-│              Real-Time Events                               │
-└─────────────────────────────────────────────────────────────┘
+                         ┌─────────────────────────┐
+                         │        End Users        │
+                         │ Students / Instructors  │
+                         │        / Admins         │
+                         └────────────┬────────────┘
+                                      │
+                                      ▼
+                    ┌─────────────────────────────┐
+                    │      React Frontend         │
+                    │                             │
+                    │ • Learning Interface        │
+                    │ • Labs / CTFs               │
+                    │ • Dashboard                 │
+                    │ • AI Interface              │
+                    │ • Admin / Instructor        │
+                    └──────────────┬──────────────┘
+                                   │
+                         REST API / WebSocket
+                                   │
+                                   ▼
+                    ┌─────────────────────────────┐
+                    │    Node.js + Express        │
+                    │                             │
+                    │ • Authentication            │
+                    │ • Authorization             │
+                    │ • Business Logic            │
+                    │ • Security Middleware       │
+                    │ • API Routes                │
+                    │ • Socket.IO                 │
+                    └───────┬──────────┬──────────┘
+                            │          │
+              ┌─────────────┘          └─────────────┐
+              ▼                                      ▼
+     ┌─────────────────┐                    ┌─────────────────┐
+     │ MongoDB Atlas   │                    │ Redis           │
+     │                 │                    │                 │
+     │ • Users         │                    │ • Cache         │
+     │ • Courses       │                    │ • Sessions      │
+     │ • Labs          │                    │ • Realtime data │
+     │ • Progress      │                    └─────────────────┘
+     │ • Certificates  │
+     └─────────────────┘
+
+              External Integrations
+                       │
+       ┌───────────────┼────────────────┐
+       ▼               ▼                ▼
+ Google Gemini      EmailJS        Payment System
+       │
+       ▼
+   Nexus AI
 ```
 
 ---
 
-# 🧰 Technology Stack
+# 🛠️ Technology Stack
 
 ## Frontend
 
-| Technology            | Purpose                   |
-| --------------------- | ------------------------- |
-| React 19              | UI architecture           |
-| Vite 6                | Development/build tooling |
-| JavaScript ES Modules | Application language      |
-| Lucide React          | UI icons                  |
-| Socket.IO Client      | Real-time communication   |
-| Firebase SDK          | Firebase integration      |
-| jsPDF                 | PDF generation            |
-| QRCode                | QR generation             |
-| Motion                | UI animation              |
-| EmailJS               | Contact/email workflow    |
-
-## Backend
-
-| Technology                  | Purpose                             |
-| --------------------------- | ----------------------------------- |
-| Node.js                     | Runtime                             |
-| Express.js                  | HTTP/API server                     |
-| Mongoose                    | MongoDB ODM                         |
-| Socket.IO                   | Real-time communication             |
-| Redis                       | Caching/service integration         |
-| Passport.js                 | Authentication                      |
-| Passport Google OAuth       | OAuth authentication                |
-| JSON Web Token              | Token-based authentication          |
-| bcrypt                      | Password hashing                    |
-| Express Validator           | Request validation                  |
-| Helmet                      | HTTP security headers               |
-| CORS                        | Cross-origin policy                 |
-| Express Rate Limit          | Request throttling                  |
-| mongo-sanitize              | NoSQL injection protection          |
-| xss-clean                   | XSS-oriented request sanitization   |
-| HPP                         | HTTP parameter pollution protection |
-| Cookie Parser               | Cookie handling                     |
-| Express Session             | Session management                  |
-| Winston/custom logger layer | Application/security logging        |
-
-## AI
-
-* Google GenAI SDK
-* Google Gemini
-* Server-side API key handling
-* Context-aware cybersecurity assistance
-
-## Database & Infrastructure
-
-* MongoDB / MongoDB Atlas
-* Redis
-* Vite development middleware
-* Express production static serving
-* Socket.IO over HTTP
-* Container-friendly `0.0.0.0` binding
+| Technology       | Purpose                               |
+| ---------------- | ------------------------------------- |
+| React 19         | User interface                        |
+| Vite             | Development server and build system   |
+| JavaScript / JSX | Application development               |
+| Tailwind CSS     | Utility-based styling                 |
+| Lucide React     | UI icons                              |
+| Motion           | Animations                            |
+| Socket.IO Client | Real-time communication               |
+| Firebase         | Authentication / platform integration |
+| jsPDF            | Certificate PDF generation            |
+| QRCode           | Certificate verification              |
+| EmailJS          | Contact/email functionality           |
 
 ---
 
-# 📂 Project Structure
+## Backend
+
+| Technology              | Purpose                             |
+| ----------------------- | ----------------------------------- |
+| Node.js                 | Server runtime                      |
+| Express.js              | REST API framework                  |
+| Mongoose                | MongoDB ODM                         |
+| Socket.IO               | Real-time communication             |
+| Redis                   | Caching / real-time infrastructure  |
+| JWT                     | Authentication                      |
+| Passport.js             | OAuth authentication                |
+| bcrypt                  | Password hashing                    |
+| Helmet                  | Security headers                    |
+| CORS                    | Cross-origin access control         |
+| Express Rate Limit      | Rate limiting                       |
+| Express Validator       | Request validation                  |
+| Mongo Sanitize          | NoSQL injection protection          |
+| XSS Clean               | XSS protection                      |
+| HPP                     | HTTP Parameter Pollution protection |
+| Cookie Parser           | Cookie handling                     |
+| Express Session         | Session management                  |
+| Winston / custom logger | Application logging                 |
+
+---
+
+## AI
+
+The platform integrates Google's Generative AI ecosystem for **Nexus AI**, the platform's cybersecurity learning assistant.
+
+---
+
+## Database
+
+**MongoDB / MongoDB Atlas**
+
+Primary persistence layer for:
+
+* Users
+* Profiles
+* Lessons
+* Labs
+* Quizzes
+* Certificates
+* Learning progress
+* Platform information
+
+---
+
+## Caching
+
+**Redis**
+
+Used for high-speed temporary data and platform infrastructure.
+
+---
+
+# 📁 Project Structure
+
+The repository is organized around the frontend application, backend services, shared project configuration, and documentation.
 
 ```text
 Cybersecurity-learning-platform-main/
@@ -347,7 +416,9 @@ Cybersecurity-learning-platform-main/
 │       │   ├── Login.jsx
 │       │   ├── Register.jsx
 │       │   ├── PaymentModal.jsx
+│       │   ├── Roadmap.jsx
 │       │   ├── SettingsModal.jsx
+│       │   ├── Tools.jsx
 │       │   ├── about.jsx
 │       │   └── contact.jsx
 │       │
@@ -378,235 +449,553 @@ Cybersecurity-learning-platform-main/
 │   │   ├── profileModel.js
 │   │   └── quizz.js
 │   │
-│   ├── routes/
-│   │   ├── adminRoutes.js
-│   │   ├── api.js
-│   │   ├── authRoutes.js
-│   │   ├── chatRoutes.js
-│   │   ├── instructorRoutes.js
-│   │   ├── learningRoutes.js
-│   │   ├── paymentRoutes.js
-│   │   └── verifyRoutes.js
-│   │
-│   ├── services/
-│   │   ├── geminiService.js
-│   │   ├── redisService.js
-│   │   └── verificationService.js
-│   │
-│   ├── socket/
-│   │   └── socketHandler.js
-│   │
-│   ├── types/
-│   │   └── typesDoc.js
-│   │
-│   └── utils/
-│       ├── autoSeeder.js
-│       ├── helpers.js
-│       └── seedData.js
+│   └── routes/
+│       ├── adminRoutes.js
+│       ├── api.js
+│       ├── authRoutes.js
+│       ├── chatRoutes.js
+│       ├── instructorRoutes.js
+│       └── learningRoutes.js
+│
+├── Screenshots/
+│   ├── Localhost-Screenshots/
+│   └── After deployment/
 │
 ├── server.js
-├── vite.config.js
 ├── package.json
 ├── package-lock.json
 ├── bun.lock
 ├── docker-compose.yml
 ├── firestore.rules
-├── firebase-applet-config.json
-├── firebase-blueprint.json
 ├── CYBER_NEXUS_FULL_GUIDE.md
 ├── dynamicstatic.txt
 ├── levelprogress.txt
 ├── metadata.json
-└── .gitignore
+├── .gitignore
+└── .dockerignore
 ```
-
----
-
-# 🔌 API Overview
-
-All application APIs are mounted under `/api`.
-
-## Health & Status
-
-| Method | Endpoint               | Purpose                                |
-| ------ | ---------------------- | -------------------------------------- |
-| GET    | `/api/health`          | API health check                       |
-| GET    | `/api/db-status`       | MongoDB connection state               |
-| GET    | `/api/redis-status`    | Redis service status                   |
-| GET    | `/api/security-status` | Security middleware/status information |
-| GET    | `/api/csrf-token`      | CSRF token status endpoint             |
-
-## Authentication
-
-| Method | Endpoint             | Purpose                     |
-| ------ | -------------------- | --------------------------- |
-| POST   | `/api/auth/register` | Register user               |
-| POST   | `/api/auth/login`    | Authenticate user           |
-| POST   | `/api/auth/logout`   | End active session          |
-| GET    | `/api/auth/me`       | Retrieve authenticated user |
-
-## Learning
-
-The learning router handles platform learning workflows, including course/path content, lessons, quizzes, progress, and practical activities.
-
-## Administration
-
-| Method | Endpoint                          | Purpose                |
-| ------ | --------------------------------- | ---------------------- |
-| GET    | `/api/admin/overview`             | Platform/admin metrics |
-| GET    | `/api/admin/users`                | User roster            |
-| PUT    | `/api/admin/users/:id/role`       | Change user role       |
-| PUT    | `/api/admin/users/:id/stats`      | Update XP/level/streak |
-| POST   | `/api/admin/users/:id/toggle-ban` | Toggle account status  |
-| DELETE | `/api/admin/users/:id`            | Delete user            |
-| GET    | `/api/admin/logs`                 | Retrieve logs          |
-| POST   | `/api/admin/logs/clear`           | Clear logs             |
-
-## Instructor
-
-| Method | Endpoint                      | Purpose               |
-| ------ | ----------------------------- | --------------------- |
-| GET    | `/api/instructor/stats`       | Instructor statistics |
-| GET    | `/api/instructor/students`    | Student activity      |
-| GET    | `/api/instructor/submissions` | Lab submissions       |
-
-## AI Assistant
-
-| Method | Endpoint    | Purpose                                         |
-| ------ | ----------- | ----------------------------------------------- |
-| POST   | `/api/chat` | Send cybersecurity learning query to AI service |
-
-## Certificate Verification
-
-| Method | Endpoint                      | Purpose              |
-| ------ | ----------------------------- | -------------------- |
-| GET    | `/api/verify-certificate/:id` | Validate certificate |
-
-## Payments
-
-Payment workflows are exposed through the `/api/payments` route group.
 
 ---
 
 # 🔐 Security Architecture
 
-Security is a first-class concern in CyberNexus.
+Security is a core architectural requirement rather than an additional feature.
 
-The backend implements a defense-in-depth model that includes:
+CyberNexus implements multiple layers of application security.
 
-### HTTP Security
+## Security Controls
+
+### HTTP Security Headers
+
+Implemented using:
 
 * Helmet
 * Content Security Policy
-* `X-Content-Type-Options`
-* `X-Frame-Options`
+* X-Content-Type-Options
+* X-Frame-Options
 * Referrer Policy
-* Cross-Origin Resource Policy
-* Cross-Origin Embedder Policy
-* Cross-Origin Opener Policy
+* Cross-Origin policies
 * Permissions Policy
-* Sensitive API cache-control headers
-* Hidden Express fingerprinting headers
-
-### Network & API Security
-
-* Strict CORS allowlisting
-* Credentials-aware CORS
-* API rate limiting
-* Reverse-proxy awareness
-* HTTP method restrictions
-* Real-time Socket.IO origin validation
-
-### Input Security
-
-* MongoDB operator sanitization
-* NoSQL injection guards
-* XSS-oriented sanitization
-* HTTP Parameter Pollution protection
-* Express Validator integration
-* Malformed JSON handling
-
-### Authentication Security
-
-* bcrypt password hashing
-* Session cookies
-* HTTP-only cookies
-* Passport authentication
-* OAuth support
-* JWT infrastructure
-* Role-based application flows
-
-### Security Monitoring
-
-* Request logging
-* Security event logging
-* Real-time security feed
-* Admin security log inspection
-* Security status endpoint
-
-> **Important implementation note:** The current source exposes a CSRF status endpoint indicating that CSRF protection is disabled in the active configuration. Before production deployment, implement and verify a complete CSRF strategy appropriate to the authentication model.
 
 ---
 
-# 🔑 Environment Variables
+### CORS Protection
 
-Create a local environment configuration file and never commit real credentials.
+The application uses explicit origin validation instead of unrestricted:
+
+```text
+Access-Control-Allow-Origin: *
+```
+
+Allowed origins can be configured through environment variables.
+
+Cloud Run, AI Studio preview environments, localhost, and explicitly configured production origins are supported.
+
+---
+
+### Rate Limiting
+
+API requests are protected with rate limiting to reduce:
+
+* Brute-force attacks
+* Request flooding
+* Automated abuse
+* Basic denial-of-service attempts
+
+Default configuration:
+
+```text
+Window: 15 minutes
+Maximum requests: 200 per IP
+```
+
+---
+
+### NoSQL Injection Protection
+
+The platform uses:
+
+* `mongo-sanitize`
+* Express Validator
+* Custom NoSQL protection middleware
+
+This helps prevent malicious MongoDB operators from being injected into request parameters.
+
+---
+
+### Cross-Site Scripting Protection
+
+XSS protection is implemented through sanitization middleware and secure response policies.
+
+---
+
+### HTTP Parameter Pollution Protection
+
+The application uses HPP protection to mitigate malicious parameter duplication attacks.
+
+---
+
+### Authentication Security
+
+Authentication supports:
+
+* JWT-based authentication
+* HTTP-only cookies
+* Bearer token fallback
+* Passport.js
+* Google OAuth integration
+* bcrypt password hashing
+
+---
+
+# 🛡️ Role-Based Access Control
+
+CyberNexus implements three principal roles.
+
+| Capability           | Student | Instructor | Admin |
+| -------------------- | :-----: | :--------: | :---: |
+| Public Courses       |    ✅    |      ✅     |   ✅   |
+| Interactive Lessons  |    ✅    |      ✅     |   ✅   |
+| Cybersecurity Labs   |    ✅    |      ✅     |   ✅   |
+| CTF Challenges       |    ✅    |      ✅     |   ✅   |
+| Nexus AI             |    ✅    |      ✅     |   ✅   |
+| Student Progress     |   Own   |    Class   |  All  |
+| Lab Evaluation       |    ❌    |      ✅     |   ✅   |
+| Instructor Dashboard |    ❌    |      ✅     |   ✅   |
+| Admin Dashboard      |    ❌    |      ❌     |   ✅   |
+| Change User Roles    |    ❌    |      ❌     |   ✅   |
+| Modify XP / Levels   |    ❌    |      ❌     |   ✅   |
+| Ban Users            |    ❌    |      ❌     |   ✅   |
+| Delete Users         |    ❌    |      ❌     |   ✅   |
+| Security Audit Logs  |    ❌    |      ❌     |   ✅   |
+
+### Privilege Escalation Protection
+
+Regular users cannot promote themselves to privileged roles.
+
+Administrative role changes are restricted to authorized administrators.
+
+This prevents common privilege-escalation scenarios such as:
+
+```text
+Student → Instructor
+Student → Admin
+Instructor → Admin
+```
+
+without administrator authorization.
+
+---
+
+# 🎮 Gamification & XP
+
+CyberNexus uses a progression system designed to encourage continuous learning.
+
+## XP Formula
+
+The XP requirement for the next level follows:
+
+```text
+XP Required = Current Level × 1,000
+```
+
+The cumulative XP required to reach level `L` is:
+
+```text
+Total XP = ((L - 1) × L / 2) × 1,000
+```
+
+## Progression
+
+| Level | Rank                   | XP to Next Level | Cumulative XP |
+| ----: | ---------------------- | ---------------: | ------------: |
+|     1 | Novice / Script Kiddie |            1,000 |             0 |
+|     2 | Apprentice             |            2,000 |         1,000 |
+|     3 | Junior Operator        |            3,000 |         3,000 |
+|     4 | Cyber Practitioner     |            4,000 |         6,000 |
+|     5 | Security Analyst       |            5,000 |        10,000 |
+|     6 | Penetration Tester     |            6,000 |        15,000 |
+|     7 | Senior Specialist      |            7,000 |        21,000 |
+|     8 | Threat Hunter          |            8,000 |        28,000 |
+|     9 | Cyber Architect        |            9,000 |        36,000 |
+|   10+ | Elite                  |         Scalable |       45,000+ |
+
+## XP Sources
+
+Learners can earn XP through:
+
+* Quizzes
+* Lessons
+* Labs
+* CTF challenges
+* Achievements
+* Streaks
+* Learning milestones
+
+---
+
+# 🤖 Nexus AI
+
+Nexus AI is CyberNexus's integrated cybersecurity learning assistant.
+
+The AI layer connects the frontend learning experience with the backend AI service.
+
+```text
+Learner
+   │
+   ▼
+CyberNexus Chat Interface
+   │
+   ▼
+POST /api/chat
+   │
+   ▼
+Chat Controller
+   │
+   ▼
+Gemini Service
+   │
+   ▼
+Google Generative AI
+   │
+   ▼
+Context-aware Cybersecurity Response
+```
+
+The assistant can support learning topics such as:
+
+* Networking
+* Web security
+* Authentication
+* Cryptography
+* Linux
+* Threat detection
+* Vulnerability concepts
+* Defensive security
+* Offensive security
+* Security architecture
+
+---
+
+# 🧪 Hands-On Labs & CTFs
+
+CyberNexus goes beyond passive learning.
+
+The platform provides practical cybersecurity activities including:
+
+### Labs
+
+* Guided exercises
+* Security tasks
+* Progress tracking
+* Submission handling
+* Practical challenges
+
+### CTFs
+
+Learners can solve challenges and earn XP based on difficulty.
+
+```text
+Easy       → 200 XP
+Medium     → 400 XP
+Hard       → 600 XP
+Insane     → 800 XP
+```
+
+This creates a progression from:
+
+```text
+Theory
+   ↓
+Interactive Learning
+   ↓
+Guided Labs
+   ↓
+CTF Challenges
+   ↓
+Advanced Security Practice
+```
+
+---
+
+# 📡 Real-Time Communication
+
+Socket.IO provides the platform's real-time communication layer.
+
+Real-time functionality includes:
+
+* Live chat
+* Security feed
+* Active user count
+* Security notifications
+* Activity updates
+* Live event streaming
+
+The architecture uses:
+
+```text
+React
+  │
+  │ Socket.IO Client
+  ▼
+Node.js HTTP Server
+  │
+  ▼
+Socket.IO Server
+  │
+  ├── Security Feed
+  ├── Live Chat
+  ├── User Activity
+  └── Notifications
+```
+
+---
+
+# 🎓 Digital Certificates
+
+CyberNexus includes an automated certificate system.
+
+Certificates can be:
+
+* Generated as PDFs
+* Downloaded
+* Shared
+* Verified through QR codes
+* Validated through the backend
+
+The frontend uses `jsPDF` and QR-code generation functionality.
+
+Certificate validation is exposed through:
+
+```text
+GET /api/verify-certificate/:id
+```
+
+---
+
+# 💳 Payment System
+
+The platform supports paid learning content through a payment-unlock workflow.
+
+Paid courses can remain locked until the required payment condition is satisfied.
+
+Administrative accounts can also be configured with privileged access to paid content.
+
+---
+
+# 🌍 Internationalization
+
+CyberNexus supports multiple languages.
+
+Currently supported:
+
+* 🇬🇧 English
+* 🇫🇷 French
+
+Language selection is persisted locally so the learner's preference remains available between sessions.
+
+---
+
+# 🌗 User Experience
+
+The interface supports:
+
+* Dark mode
+* Light mode
+* Responsive layouts
+* Interactive animations
+* Real-time notifications
+* Persistent navigation state
+* Responsive dashboards
+* Interactive cybersecurity visualizations
+
+User preferences such as theme and language are persisted using browser storage.
+
+---
+
+# 🔌 API Overview
+
+## Authentication
+
+```http
+POST /api/auth/register
+POST /api/auth/login
+POST /api/auth/logout
+GET  /api/auth/me
+```
+
+---
+
+## Administration
+
+```http
+GET    /api/admin/overview
+GET    /api/admin/users
+PUT    /api/admin/users/:id/role
+PUT    /api/admin/users/:id/stats
+POST   /api/admin/users/:id/toggle-ban
+DELETE /api/admin/users/:id
+GET    /api/admin/logs
+POST   /api/admin/logs/clear
+```
+
+---
+
+## Instructor
+
+```http
+GET /api/instructor/stats
+GET /api/instructor/students
+GET /api/instructor/submissions
+```
+
+---
+
+## AI
+
+```http
+POST /api/chat
+```
+
+---
+
+## Certificate Verification
+
+```http
+GET /api/verify-certificate/:id
+```
+
+---
+
+## Infrastructure Status
+
+```http
+GET /api/db-status
+GET /api/redis-status
+GET /api/security-status
+GET /api/csrf-token
+```
+
+---
+
+# 🗄️ Database Architecture
+
+MongoDB is used as the primary application database.
+
+Major models include:
+
+```text
+User
+ ├── Authentication
+ ├── Role
+ ├── XP
+ ├── Level
+ ├── Streak
+ └── Profile
+
+Lesson
+ ├── Course content
+ ├── Learning modules
+ └── Progress
+
+Labs
+ ├── Lab content
+ ├── Tasks
+ └── Submissions
+
+Quiz
+ ├── Questions
+ ├── Answers
+ └── Scores
+
+Certificate
+ ├── Certificate ID
+ ├── Learner information
+ ├── Verification information
+ └── QR data
+```
+
+MongoDB Atlas can be used as the production database.
+
+---
+
+# ⚙️ Environment Variables
+
+Create a `.env` file in the project root.
 
 Example:
 
 ```env
 NODE_ENV=development
-PORT=3000
 
-MONGODB_URI=mongodb://localhost:27017/cybernexus
+PORT=Localhost
 
-JWT_SECRET=replace_with_a_long_random_secret
-SESSION_SECRET=replace_with_a_long_random_secret
+MONGO_URI=your_mongodb_connection_string
 
-GEMINI_API_KEY=your_google_gemini_api_key
+JWT_SECRET=your_secure_jwt_secret
 
-CLIENT_URL=http://localhost:3000
-ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
+SESSION_SECRET=your_secure_session_secret
 
-REDIS_URL=redis://localhost:6379
+REDIS_URL=your_redis_connection_string
+
+GOOGLE_CLIENT_ID=your_google_client_id
+
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+
+API_KEY=your_api_key
+
+CLIENT_URL=http://localhost:port
+
+ALLOWED_ORIGINS=http://localhost:port
+
+EMAILJS_SERVICE_ID=your_emailjs_service_id
+
+EMAILJS_TEMPLATE_ID=your_emailjs_template_id
+
+EMAILJS_PUBLIC_KEY=your_emailjs_public_key
 ```
 
-Additional OAuth, Firebase, EmailJS, payment, or deployment-specific variables may be required depending on the enabled features.
+> **Important:** Never commit `.env` or production credentials to GitHub.
 
-### Secret Management Rules
-
-Never commit:
-
-* API keys
-* JWT secrets
-* Session secrets
-* Database credentials
-* OAuth client secrets
-* Payment credentials
-* Private Firebase credentials
-
-Use environment variables or the secret-management system provided by your deployment platform.
+Generate strong secrets instead of using example values.
 
 ---
 
 # 🚀 Installation
 
-## Prerequisites
-
-Recommended environment:
-
-* Node.js 20+
-* npm 10+
-* MongoDB or MongoDB Atlas
-* Redis, if Redis-backed features are enabled
-* Google Gemini API key for AI functionality
-
 ## 1. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
-cd Cybersecurity-learning-platform-main
+git clone https://github.com/Yassiinneee/Cybersecurity-learning-platform.git
 ```
+
+Navigate into the project:
+
+```bash
+cd Cybersecurity-learning-platform
+```
+
+---
 
 ## 2. Install Dependencies
 
@@ -614,35 +1003,69 @@ cd Cybersecurity-learning-platform-main
 npm install
 ```
 
+---
+
 ## 3. Configure Environment Variables
 
-Create `.env` in the project root.
+Create:
 
-On Windows PowerShell:
-
-```powershell
-New-Item .env
+```text
+.env
 ```
 
-Populate it with the required values described above.
+Add the required configuration values.
 
-## 4. Start the Development Server
+---
+
+## 4. Configure MongoDB
+
+Create a MongoDB Atlas database or use a local MongoDB instance.
+
+Example:
+
+```env
+MONGO_URI=mongodb://127.0.0.1:27017/projectname
+```
+
+For MongoDB Atlas:
+
+```env
+MONGO_URI=mongodb+srv://USERNAME:PASSWORD@cluster.mongodb.net/projectname
+```
+
+---
+
+## 5. Configure Redis
+
+If Redis is enabled:
+
+```env
+REDIS_URL=redis://localhost:port
+```
+
+or use a managed Redis provider.
+
+---
+
+# 💻 Development
+
+Start the application:
 
 ```bash
 npm run dev
 ```
 
-The application is configured to run on:
+The development server runs on:
 
 ```text
-http://localhost:3000
+http://localhost:port
 ```
 
-The Express server mounts Vite middleware during development, allowing the frontend and backend to operate through the same development server.
+The application uses Vite middleware through the Express server, allowing the frontend and backend to operate together during development.
 
 ---
 
-# 🏭 Production Build
+# 🏗️ Production Build
 
 Build the React frontend:
 
@@ -650,406 +1073,296 @@ Build the React frontend:
 npm run build
 ```
 
-Start the production server:
+Then start the application:
 
 ```bash
-npm run start
+npm start
 ```
 
-In production, Express serves the generated frontend from the `dist` directory.
-
-The server binds to:
-
-```text
-0.0.0.0:3000
-```
-
-This is suitable for containerized and managed-cloud environments that inject the public port through infrastructure configuration.
+The Express server serves the generated production frontend.
 
 ---
 
 # 🐳 Docker
 
-A `docker-compose.yml` file is included in the repository.
+The project includes:
 
-Before using Docker in production, verify:
+```text
+docker-compose.yml
+```
 
-* Environment variable injection
-* MongoDB connectivity
-* Redis connectivity
-* Port mapping
-* Persistent volumes
-* CORS origins
-* Secure cookies
-* Reverse proxy configuration
-* Health checks
+Docker can be used to standardize the development and deployment environment.
+
+Typical workflow:
+
+```bash
+docker compose up --build
+```
+
+Stop containers:
+
+```bash
+docker compose down
+```
+
+---
+
+# ☁️ Deployment
+
+CyberNexus is designed to support cloud deployment environments such as Google Cloud Run.
+
+A typical production architecture is:
+
+```text
+                   Internet
+                      │
+                      ▼
+               Google Cloud Run
+                      │
+              ┌───────┴────────┐
+              │                │
+              ▼                ▼
+         CyberNexus API    React SPA
+              │
+        ┌─────┴─────┐
+        │           │
+        ▼           ▼
+   MongoDB Atlas   Redis
+        │
+        ▼
+   Persistent Data
+
+External Services
+        │
+        ├── Google Gemini
+        ├── Google OAuth
+        ├── EmailJS
+        └── Payment Provider
+```
+
+Production deployment should use:
+
+* HTTPS
+* Secure environment variables
+* Production MongoDB credentials
+* Restricted CORS origins
+* Strong JWT secrets
+* Strong session secrets
+* Redis authentication
 * Production logging
+* Monitoring
+* Backup policies
 
 ---
 
-# 🧪 Development Workflow
+# 🔒 Security Best Practices
 
-A recommended development workflow is:
+Before deploying CyberNexus publicly:
 
-```text
-1. Start MongoDB / Atlas
-        │
-        ▼
-2. Start Redis when required
-        │
-        ▼
-3. Configure .env
-        │
-        ▼
-4. npm install
-        │
-        ▼
-5. npm run dev
-        │
-        ▼
-6. Test authentication
-        │
-        ▼
-7. Test learning modules
-        │
-        ▼
-8. Test labs / CTFs
-        │
-        ▼
-9. Test AI assistant
-        │
-        ▼
-10. Test real-time feed
-        │
-        ▼
-11. Run production build
-        │
-        ▼
-12. Security review before deployment
-```
+### Environment Security
 
----
-
-# 🧭 Learning Experience
-
-A typical learner journey is:
-
-```text
-Register / Login
-      │
-      ▼
-Dashboard
-      │
-      ▼
-Choose Learning Path
-      │
-      ▼
-Study Lesson
-      │
-      ▼
-Interactive Diagram
-      │
-      ▼
-Complete Quiz
-      │
-      ▼
-Earn XP
-      │
-      ▼
-Deploy / Enter Practical Lab
-      │
-      ▼
-Complete Task / Submit Flag
-      │
-      ▼
-Unlock Progress / Achievements
-      │
-      ▼
-Complete CTF Challenges
-      │
-      ▼
-Earn Certificate
-      │
-      ▼
-Verify Certificate
-```
-
----
-
-# 🧑‍💻 Example Learning Topics
-
-The project data layer currently contains cybersecurity learning material such as:
-
-* SQL Injection Fundamentals
-* Cross-Site Scripting
-* NoSQL Injection Prevention
-* CSRF Tokens & Session Defense
-* Web application security
-* Secure coding concepts
-* Security monitoring
-* Practical attack/defense workflows
-
-The architecture is extensible, allowing additional learning paths, modules, lessons, quizzes, labs, CTFs, and achievements to be added through the platform's data/model layer.
-
----
-
-# 🧱 Design Principles
-
-CyberNexus follows several engineering principles:
-
-### Separation of Concerns
-
-Frontend components, backend controllers, services, routes, models, middleware, configuration, and real-time logic are separated into dedicated modules.
-
-### Security by Design
-
-Security controls are integrated into the HTTP pipeline instead of being treated as an afterthought.
-
-### Progressive Learning
-
-Educational content moves from foundational concepts toward practical and advanced exercises.
-
-### Real-Time Feedback
-
-Socket.IO enables immediate activity and security telemetry updates.
-
-### Extensibility
-
-Learning paths, roles, APIs, services, and data models are structured to support future expansion.
-
-### Environment-Based Configuration
-
-Secrets and environment-dependent settings should be provided through environment variables rather than hard-coded configuration.
-
----
-
-# 📊 Current Project Capabilities
-
-| Area                          | Status |
-| ----------------------------- | :----: |
-| React frontend                |    ✅   |
-| Vite integration              |    ✅   |
-| Express backend               |    ✅   |
-| MongoDB/Mongoose integration  |    ✅   |
-| Redis integration             |    ✅   |
-| Authentication infrastructure |    ✅   |
-| Google OAuth infrastructure   |    ✅   |
-| Admin dashboard               |    ✅   |
-| Instructor dashboard          |    ✅   |
-| Learning paths                |    ✅   |
-| Quizzes                       |    ✅   |
-| Cybersecurity labs            |    ✅   |
-| CTF-style challenges          |    ✅   |
-| Terminal simulator            |    ✅   |
-| AI cybersecurity tutor        |    ✅   |
-| Socket.IO real-time feed      |    ✅   |
-| Certificate generation        |    ✅   |
-| Certificate verification      |    ✅   |
-| PDF export                    |    ✅   |
-| QR-code support               |    ✅   |
-| English/French UI             |    ✅   |
-| Dark/light theme              |    ✅   |
-| API rate limiting             |    ✅   |
-| Helmet security headers       |    ✅   |
-| NoSQL sanitization            |    ✅   |
-| XSS sanitization layer        |    ✅   |
-| HPP protection                |    ✅   |
-| Centralized error handling    |    ✅   |
-| Production static serving     |    ✅   |
-
----
-
-# ⚠️ Production Readiness Checklist
-
-Before deploying CyberNexus publicly, complete the following security hardening tasks:
-
-* [ ] Remove every hard-coded credential or secret from source code.
-* [ ] Rotate any credential that has previously appeared in source/history.
-* [ ] Use a strong randomly generated `JWT_SECRET`.
-* [ ] Use a strong randomly generated `SESSION_SECRET`.
-* [ ] Configure production `NODE_ENV`.
-* [ ] Restrict `ALLOWED_ORIGINS` to trusted production domains.
-* [ ] Verify secure cookie behavior behind the production proxy.
-* [ ] Implement and test CSRF protection.
-* [ ] Review authentication/session expiration.
-* [ ] Review authorization checks for every admin/instructor endpoint.
-* [ ] Validate all payment flows server-side.
-* [ ] Validate certificate verification server-side.
-* [ ] Remove test/demo credentials and privileged username checks.
-* [ ] Review seeded accounts before production deployment.
-* [ ] Review all CTF/lab flags and ensure they are not exposed unnecessarily to clients.
-* [ ] Apply MongoDB least-privilege database credentials.
-* [ ] Enable production MongoDB network restrictions.
-* [ ] Configure Redis authentication/TLS when required.
-* [ ] Configure centralized production logging.
-* [ ] Add monitoring and alerting.
-* [ ] Run dependency vulnerability scans.
-* [ ] Run OWASP ZAP or an equivalent authorized security assessment.
-* [ ] Perform manual authorization testing.
-* [ ] Verify CSP compatibility in the production environment.
-* [ ] Confirm backups and recovery procedures.
-* [ ] Configure HTTPS/TLS at the deployment layer.
-* [ ] Review rate limits according to real traffic requirements.
-
----
-
-# 🔍 Security Testing Recommendations
-
-For an authorized staging deployment, consider testing:
+* [ ] Never commit `.env`
+* [ ] Rotate exposed API keys
+* [ ] Use strong JWT secrets
+* [ ] Use strong session secrets
+* [ ] Restrict database network access
+* [ ] Use HTTPS
 
 ### Authentication
 
-* Brute-force resistance
-* Session fixation
-* Session expiration
-* Cookie attributes
-* OAuth redirect validation
-* Password policy
-* Account enumeration
-
-### Authorization
-
-* Student → Instructor privilege escalation
-* Instructor → Admin privilege escalation
-* Object-level authorization
-* Administrative endpoint access
-* Certificate ownership checks
-
-### Input Validation
-
-* NoSQL operator injection
-* XSS payloads
-* HTTP parameter pollution
-* Malformed JSON
-* Oversized requests
-* Unexpected content types
+* [ ] Use secure HTTP-only cookies
+* [ ] Configure appropriate SameSite policies
+* [ ] Enable OAuth only with trusted redirect URLs
+* [ ] Enforce strong password policies
+* [ ] Implement account lockout/rate limiting
 
 ### API Security
 
-* Rate-limit behavior
-* CORS enforcement
-* CSRF controls
-* Security headers
-* Error information disclosure
-* Cache-control behavior
+* [ ] Keep rate limiting enabled
+* [ ] Validate request payloads
+* [ ] Sanitize MongoDB inputs
+* [ ] Protect privileged routes
+* [ ] Restrict CORS
+* [ ] Monitor security logs
 
-### Real-Time Security
+### Infrastructure
 
-* Socket.IO origin restrictions
-* Event authorization
-* Unauthorized room/event subscription
-* Event payload validation
-* Rate limiting for real-time actions
-
----
-
-# 🧠 Educational Security Scope
-
-CyberNexus can serve as a foundation for training in:
-
-```text
-Cybersecurity Fundamentals
-        │
-        ├── Networking
-        ├── Web Security
-        ├── Secure Coding
-        ├── Authentication
-        ├── Authorization
-        ├── Database Security
-        ├── Defensive Security
-        ├── Security Monitoring
-        ├── Vulnerability Analysis
-        ├── CTF Methodology
-        └── Incident Awareness
-```
-
-The platform can be extended with:
-
-* Network security labs
-* Linux security
-* Windows security
-* Active Directory
-* SOC/SIEM simulations
-* Digital forensics
-* Threat intelligence
-* Malware-analysis theory
-* Cloud security
-* DevSecOps
-* Secure software development
-* Incident response
-* Zero Trust architecture
+* [ ] Secure MongoDB Atlas
+* [ ] Secure Redis
+* [ ] Configure Cloud Run environment variables
+* [ ] Monitor application errors
+* [ ] Maintain database backups
+* [ ] Regularly update dependencies
 
 ---
 
-# 🤝 Contributing
+# 🖼️ Screenshots
 
-Contributions are welcome.
+The repository includes dedicated screenshots documenting both local development and production deployment.
 
-A recommended contribution workflow:
+## Home
 
-```bash
-git checkout -b feature/your-feature
-```
+![CyberNexus Home](Screenshots/After%20deployment/Home%20page.png)
 
-Implement and test the change, then:
+## Dashboard
 
-```bash
-git add .
-git commit -m "feat: describe the change"
-git push origin feature/your-feature
-```
+![CyberNexus Dashboard](Screenshots/After%20deployment/Dashboard%20page.png)
 
-Open a pull request describing:
+## Courses / Lessons
 
-* What changed
-* Why it changed
-* How it was tested
-* Security implications
-* Any required environment variables
-* Any database/schema changes
+![Lessons](Screenshots/After%20deployment/Lessons%20page.png)
+
+## Cybersecurity Labs
+
+![Labs](Screenshots/After%20deployment/Labs%20page.png)
+
+## CTF Challenges
+
+![CTFs](Screenshots/After%20deployment/CTFs%20page.png)
+
+## Kali Linux Console
+
+![Kali Linux Console](Screenshots/After%20deployment/Kali%20linux%20console.png)
+
+## Nexus AI
+
+![Nexus AI](Screenshots/After%20deployment/Nexus%20AI.png)
+
+## Admin Panel
+
+![Admin Panel](Screenshots/After%20deployment/Admin%20panel.png)
+
+## Instructor Panel
+
+![Instructor Panel](Screenshots/After%20deployment/Instractor%20Panel.png)
+
+## Live Chat
+
+![Live Chat](Screenshots/After%20deployment/Live%20chat%20page.png)
+
+## Certificate
+
+![Certificate](Screenshots/After%20deployment/Certificate%20Model.png)
+
+## Roadmap
+
+![Roadmap](Screenshots/After%20deployment/Roadmap-Red%20team.png)
+
+---
+
+# 📊 Platform Capabilities
+
+| Category              | Capability                           |
+| --------------------- | ------------------------------------ |
+| 🎓 Education          | Lessons, quizzes, paths              |
+| 🧪 Practical Training | Labs and hands-on exercises          |
+| 🚩 CTF                | Difficulty-based security challenges |
+| 🤖 AI                 | Nexus AI cybersecurity assistant     |
+| 🔐 Security           | Multi-layer application security     |
+| 👤 Authentication     | JWT, sessions, OAuth                 |
+| 👨‍🏫 Teaching        | Instructor dashboard                 |
+| 👑 Administration     | Complete platform administration     |
+| 💬 Communication      | Real-time Socket.IO chat             |
+| 🏆 Gamification       | XP, levels, achievements, streaks    |
+| 🎓 Certification      | PDF certificates + verification      |
+| 💳 Payments           | Paid course unlocking                |
+| 🌍 Localization       | English / French                     |
+| 🌗 UI                 | Dark / Light mode                    |
+| 📡 Monitoring         | Security feeds and activity logs     |
+| 🗄️ Database          | MongoDB Atlas                        |
+| ⚡ Cache               | Redis                                |
+| ☁️ Deployment         | Cloud-ready architecture             |
+
+---
+
+# 🧪 Testing & Verification
+
+Before production deployment, verify the following:
+
+### Application
+
+* [ ] Application starts successfully
+* [ ] Frontend loads correctly
+* [ ] API endpoints respond correctly
+* [ ] MongoDB connection is established
+* [ ] Redis connection is established
+* [ ] Socket.IO connects successfully
+
+### Authentication
+
+* [ ] Registration works
+* [ ] Login works
+* [ ] Logout works
+* [ ] Session persistence works
+* [ ] OAuth works if enabled
+* [ ] Unauthorized routes are blocked
+
+### Authorization
+
+* [ ] Student permissions work
+* [ ] Instructor permissions work
+* [ ] Admin permissions work
+* [ ] Privilege escalation is prevented
+
+### Learning
+
+* [ ] Lessons load
+* [ ] Quizzes work
+* [ ] Labs work
+* [ ] CTF challenges work
+* [ ] XP updates correctly
+* [ ] Progress persists
+
+### AI
+
+* [ ] Gemini API key is configured
+* [ ] Nexus AI responds
+* [ ] API errors are handled gracefully
+* [ ] Rate limits are respected
+
+### Production
+
+* [ ] HTTPS enabled
+* [ ] CORS restricted
+* [ ] Environment variables configured
+* [ ] Database secured
+* [ ] Logs monitored
+* [ ] Backups configured
 
 ---
 
 # 🐛 Troubleshooting
 
-## Application does not start
+## MongoDB Connection Error
 
 Check:
 
-```bash
-node --version
-npm --version
+```env
+MONGO_URI=...
 ```
 
-Then reinstall dependencies:
+Make sure:
 
-```bash
-npm install
-```
+* MongoDB Atlas credentials are correct
+* The database user exists
+* The IP address is allowed
+* The connection string is valid
 
-On Windows PowerShell:
+---
 
-```powershell
-Remove-Item -Recurse -Force node_modules
-npm install
-```
-
-## MongoDB connection problems
+## Redis Connection Error
 
 Verify:
 
 ```env
-MONGODB_URI=...
+REDIS_URL=...
 ```
 
-Then confirm:
+Ensure Redis is running and reachable.
 
-* MongoDB is running
-* Atlas IP/network access is configured
-* Database credentials are valid
-* The user has the required permissions
+---
 
-## Gemini AI is unavailable
+## Gemini API Error
 
 Verify:
 
@@ -1057,113 +1370,295 @@ Verify:
 GEMINI_API_KEY=...
 ```
 
-Also check:
+Check that:
 
-* The API key is active
-* The selected Google AI service/model is available
+* The API key is valid
+* The selected model is available
 * API quotas have not been exceeded
-* The server can reach the Google AI API
 
-## Redis is unavailable
+---
+
+## CORS Error
 
 Check:
 
 ```env
-REDIS_URL=redis://localhost:6379
+ALLOWED_ORIGINS=http://localhost:port
 ```
 
-If Redis is optional for the feature being tested, verify the application's fallback behavior before assuming the entire platform is unavailable.
+For production, explicitly add the production frontend URL.
 
-## Port 3000 already in use
-
-Find the process using port 3000 and stop it, or adjust the server configuration and deployment environment consistently.
+Avoid unrestricted CORS in production.
 
 ---
 
-# 📚 Documentation
+## Authentication Problems
 
-The repository includes:
+Check:
 
-* `CYBER_NEXUS_FULL_GUIDE.md` — extended platform documentation
-* `levelprogress.txt` — progression/XP reference
-* `dynamicstatic.txt` — project-specific reference information
-* `metadata.json` — project metadata
-* Firebase configuration and rules files
+```env
+JWT_SECRET=...
+SESSION_SECRET=...
+```
 
----
-
-# 🗺️ Future Roadmap
-
-Potential future enhancements include:
-
-* [ ] Dedicated LMS administration portal
-* [ ] Advanced SOC simulation
-* [ ] Real Linux container-based labs
-* [ ] Isolated browser-based lab environments
-* [ ] Docker/Kubernetes security labs
-* [ ] Network packet-analysis laboratories
-* [ ] SIEM integration
-* [ ] Threat-intelligence feeds
-* [ ] Advanced analytics dashboard
-* [ ] Instructor-created courses
-* [ ] Automated assessment engine
-* [ ] Secure lab orchestration
-* [ ] Multi-tenant classroom support
-* [ ] More OAuth providers
-* [ ] Automated security regression testing
-* [ ] CI/CD security gates
-* [ ] SAST/DAST integration
-* [ ] Comprehensive accessibility audit
-* [ ] Production observability stack
+Make sure the frontend and backend are using the correct origin and cookie configuration.
 
 ---
 
-# 👨‍💻 Project Identity
+# 🔮 Future Improvements
 
-**Project:** CyberNexus
-**Category:** Cybersecurity Education / EdTech / Security Training
-**Architecture:** Full-stack JavaScript
-**Frontend:** React + Vite
-**Backend:** Node.js + Express
-**Database:** MongoDB / MongoDB Atlas
-**Cache/Service Layer:** Redis
-**Real-Time Layer:** Socket.IO
-**AI Layer:** Google Gemini
-**Security Model:** Defense in Depth
-**Primary Purpose:** Cybersecurity education, simulation, and controlled practical training
+Potential future development directions include:
+
+* [ ] Advanced SOC simulation environment
+* [ ] More realistic attack/defense laboratories
+* [ ] Automated lab grading
+* [ ] Advanced threat intelligence modules
+* [ ] SIEM simulation
+* [ ] Dockerized vulnerable environments
+* [ ] Kubernetes security laboratories
+* [ ] Cloud security training
+* [ ] AWS security modules
+* [ ] Azure security modules
+* [ ] GCP security modules
+* [ ] Advanced cryptography laboratories
+* [ ] Web application penetration-testing labs
+* [ ] Network traffic analysis laboratories
+* [ ] Malware analysis sandbox
+* [ ] Security certification preparation paths
+* [ ] Advanced instructor analytics
+* [ ] Leaderboards
+* [ ] Team-based CTF competitions
+* [ ] More AI-powered tutoring capabilities
+* [ ] Automated learning recommendations
+
+---
+
+# 📚 Educational Scope
+
+CyberNexus can be extended to cover a broad cybersecurity curriculum.
+
+### Foundations
+
+* Computer hardware
+* Operating systems
+* Networking
+* TCP/IP
+* OSI Model
+* DNS
+* DHCP
+* HTTP/HTTPS
+
+### Defensive Security
+
+* SOC operations
+* SIEM
+* Log analysis
+* Incident response
+* Threat detection
+* Digital forensics
+* Security monitoring
+
+### Offensive Security
+
+* Reconnaissance
+* Network scanning
+* Vulnerability assessment
+* Web penetration testing
+* Exploitation fundamentals
+* Privilege escalation
+* Post-exploitation
+
+### Application Security
+
+* OWASP Top 10
+* Authentication vulnerabilities
+* Authorization
+* SQL injection
+* XSS
+* CSRF
+* SSRF
+* API security
+
+### Cryptography
+
+* Hashing
+* Symmetric encryption
+* Asymmetric encryption
+* Digital signatures
+* Certificates
+* PKI
+
+### Cloud Security
+
+* IAM
+* Network security
+* Container security
+* Cloud logging
+* Cloud incident response
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+## Contribution Workflow
+
+1. Fork the repository.
+2. Create a feature branch.
+
+```bash
+git checkout -b feature/your-feature
+```
+
+3. Implement your changes.
+4. Test the application.
+5. Commit your changes.
+
+```bash
+git commit -m "feat: add your feature"
+```
+
+6. Push your branch.
+
+```bash
+git push origin feature/your-feature
+```
+
+7. Open a Pull Request.
+
+---
+
+# 📌 Development Principles
+
+CyberNexus follows several engineering principles:
+
+### Security First
+
+Security controls should be considered throughout development rather than added after implementation.
+
+### Separation of Concerns
+
+Frontend presentation, backend services, database operations, authentication, and security middleware are separated into dedicated modules.
+
+### Scalability
+
+Redis, Socket.IO, MongoDB Atlas, and container/cloud deployment provide a foundation for scaling the platform.
+
+### User-Centered Learning
+
+Technical complexity should remain behind an accessible and intuitive learning interface.
+
+### Practical Education
+
+The platform prioritizes hands-on cybersecurity experience over passive theoretical content.
+
+---
+
+# 🏆 Project Highlights
+
+CyberNexus brings together several disciplines into one platform:
+
+```text
+Software Engineering
+        +
+Cybersecurity
+        +
+Network Engineering
+        +
+Artificial Intelligence
+        +
+Cloud Computing
+        +
+Database Engineering
+        +
+Real-Time Systems
+        +
+UX/UI Design
+        =
+        CyberNexus
+```
+
+The result is a cybersecurity education platform that combines **learning, experimentation, collaboration, automation, and security engineering** within a single full-stack application.
+
+---
+
+# 🙏 Acknowledgments
+
+Special thanks to the organizations, educators, communities, and technologies that contributed to the learning and development journey behind this project.
+
+### 🎓 GOMYCODE
+
+For providing practical technical education, project-based learning, and a development environment that encourages experimentation and continuous improvement.
+
+### 🎓 Woolf University
+
+For contributing to the academic and software engineering foundation supporting this project.
+
+### 👨‍🏫 Instructors & Mentors
+
+Special appreciation to the instructors and mentors who provided guidance, technical feedback, and project direction throughout the development process.
+
+### 🌐 Open Source Community
+
+CyberNexus also benefits from the broader open-source ecosystem and the developers who maintain the libraries and frameworks used throughout the project.
+
+---
+
+# 👨‍💻 Author
+
+**Yassine Kaltoum**
+
+Software & Network Engineering
+Cybersecurity • Software Engineering • Network Infrastructure • AI-Powered Applications
+
+### Areas of Interest
+
+* Cybersecurity
+* Software Engineering
+* Network Engineering
+* Full-Stack Development
+* System Architecture
+* Artificial Intelligence
+* Cloud Computing
+* UI/UX Engineering
 
 ---
 
 # 📄 License
 
-This project currently declares the **ISC License** in its package metadata.
+This project is distributed under the **ISC License**.
 
-Review and update the license section if the project is redistributed under a different institutional, academic, commercial, or open-source license.
-
----
-
-
-#  Author
-
-Yassine Kaltoum
-
-Software & Network Engineering
-
-Focus Areas
-Software Engineering
-Front-End Development
-Web Performance
-UI/UX Engineering
-System Architecture
-Network Engineering
-Cybersecurity
+See the project configuration and repository for the complete licensing information.
 
 ---
 
-# ⭐ Final Note
+# ⭐ Support the Project
 
-CyberNexus is more than a conventional course website: it is designed as an integrated cybersecurity learning environment that combines **education, simulation, practical exercises, AI assistance, gamification, real-time telemetry, administration, and assessment**.
+If you find CyberNexus useful or interesting:
 
-Its modular architecture provides a strong foundation for evolving the project into a broader cybersecurity training ecosystem while maintaining a clear separation between the learner experience, backend services, security controls, data layer, and real-time infrastructure.
+⭐ Star the repository
+🍴 Fork the project
+🐛 Report issues
+💡 Suggest improvements
+🤝 Contribute to the project
 
-> **Build securely. Learn responsibly. Practice only with authorization. Defend by design.**
+---
+
+<div align="center">
+
+## 🛡️ CyberNexus
+
+### **Learn. Practice. Attack. Defend. Evolve.**
+
+**An interactive cybersecurity learning ecosystem built for the next generation of security professionals.**
+
+<br>
+
+`Cybersecurity × AI × Software Engineering × Practical Learning`
+
+<br>
+
+**© 2026 CyberNexus — Built with passion for cybersecurity education.**
+
+</div>
