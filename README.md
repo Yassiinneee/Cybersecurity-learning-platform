@@ -19,7 +19,7 @@
 <br>
 
 <img src="https://img.shields.io/badge/Security-OWASP%20Focused-critical?style=flat-square&logo=owasp" alt="Security">
-<img src="https://img.shields.io/badge/Security-Defense%20%7C%20Depth-red?style=for-the-badge&logo=shield&logoColor=white" alt="Security - Defense in Depth">
+<img src="https://img.shields.io/badge/Security-Defense%20Depth-red?style=for-the-badge&logo=shield&logoColor=white" alt="Security - Defense in Depth">
 <img src="https://img.shields.io/badge/Authentication-JWT%20%7C%20OAuth-orange?style=flat-square" alt="Authentication">
 <img src="https://img.shields.io/badge/License-ISC-blue?style=flat-square" alt="License">
 
