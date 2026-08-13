@@ -12,8 +12,8 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=3000
-      - MONGODB_URI=mongodb://mongodb:27017/cybernexus
-      - REDIS_URL=redis://redis:6379
+      - MONGODB_URI=your mongo URL
+      - REDIS_URL=Your Redis URL
       - SESSION_SECRET=${SESSION_SECRET}
     depends_on:
       - mongodb
