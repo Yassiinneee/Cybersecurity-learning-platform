@@ -1,15 +1,17 @@
 # CYBERNEXUS PLATFORM: ARCHITECTURE, SECURITY & SYSTEM MANUAL
-> **Version:** 2.5.0 | **Classification:** Technical Reference & Deployment Manual  
-> **Platform:** Full-Stack Gamified Cybersecurity Learning Management System & Cyber Range
+> **Version:** 2.6.0 | **Classification:** Technical Reference & Deployment Manual  
+> **Platform:** Full-Stack Cybersecurity Learning Platforme
 
 ---
 
 ## 📋 Executive Summary
 
-**CyberNexus** is a next-generation, full-stack cybersecurity learning platform and interactive cyber range designed to bridge theoretical cybersecurity concepts with hands-on technical execution. Featuring an integrated web-based Kali terminal, active containerized lab environments, jeopardy-style CTF (Capture The Flag) arenas, an AI Cyber Assistant powered by Google Gemini, and a granular Role-Based Access Control (RBAC) engine, CyberNexus delivers an end-to-end educational framework for cybersecurity professionals, instructors, and students.
+**CyberNexus** is a next-generation, full-stack cybersecurity learning platform and interactive cyber range designed to bridge theoretical cybersecurity concepts with hands-on technical execution. Featuring an integrated web-based Kali terminal, active containerized lab environments, jeopardy-style CTF (Capture The Flag) arenas, an AI Cyber Assistant powered by Google Gemini, an interactive Cybersecurity Roadmap with animated station tracking, an essential Cybersecurity Toolkit index, and a granular Role-Based Access Control (RBAC) engine, CyberNexus delivers an end-to-end educational framework for cybersecurity professionals, instructors, and students.
 
 ### Key Capabilities
 - **Gamified Cyber Range**: Progressive experience point (XP) engine, levels, streaks, badges, and real-time leaderboards.
+- **Interactive Cyber Roadmap**: Dynamic SVG S-curve learning highway with a moving cyber drone pulse, 7 progressive stations (Beginner to Expert), 3 specialized career tracks (All-Rounder, Red Team, Blue Team), animation controls, and interactive skill checklists.
+- **Essential Cybersecurity Toolkit**: Curated index of 10 top industry-standard security utilities (Nmap, Wireshark, Burp Suite, Metasploit, John the Ripper, OWASP ZAP, Ghidra, THC-Hydra, SQLmap, Aircrack-ng) with real-time filtering, capability tags, and official documentation links.
 - **Interactive Kali Console**: Simulated browser-based command line interface supporting network recon (`nmap`), web scanning (`nikto`, `gobuster`), cryptography tools, and log analysis.
 - **Role-Based Access Control (RBAC)**: Strict privilege enforcement separating **Admin**, **Instructor**, and **Student** operations.
 - **AI Cyber Tutor ("Nexus AI")**: Context-aware AI tutor powered by Google Gemini, trained to guide learners through penetration testing concepts without giving away explicit flag answers.
@@ -45,6 +47,8 @@ cyber-nexus-platform/
 │           ├── Instructor.jsx     # Instructor Telemetry & Student Management
 │           ├── Login.jsx          # Authentication entry & JWT handler
 │           ├── Register.jsx       # Learner onboarding & account creation
+│           ├── Tools.jsx          # Essential Cybersecurity Toolkit index (10 Tools)
+│           ├── Roadmap.jsx        # Interactive Cybersecurity Pathway (7 Stations, 3 Tracks)
 │           ├── InteractiveDiagram.jsx # OSI, TCP, and SQLi interactive visualizers
 │           ├── about.jsx          # Platform architecture & mission overview
 │           └── contact.jsx        # Secure dispatch & support terminal
@@ -185,6 +189,30 @@ $$\text{Total Cumulative XP for Level } L = \sum_{k=1}^{L-1} (k \times 1,000) = 
 
 ---
 
+## 🗺️ Interactive Cybersecurity Roadmap & Toolkit Modules
+
+### 1. Essential Cybersecurity Toolkit (`Tools.jsx`)
+The **Tools** component provides a curated index of 10 industry-standard security tools used daily by ethical hackers, penetration testers, and SOC analysts:
+- **Index of Tools**: Nmap, Wireshark, Burp Suite, Metasploit Framework, John the Ripper, OWASP ZAP, Ghidra, THC-Hydra, SQLmap, and Aircrack-ng.
+- **Categorization & Filtering**: Filterable by categories including Reconnaissance, Web Security, Offensive Pentesting, Traffic Analysis, Credential Audit, Wireless Security, and Reverse Engineering.
+- **Utility Features**: Live search across tool descriptions and capability tags, one-click copyable documentation links, and direct access links.
+
+### 2. Interactive Cybersecurity Roadmap (`Roadmap.jsx`)
+The **Roadmap** component offers a dynamic, animated visual pathway guiding learners from baseline beginner concepts to elite cybersecurity mastery:
+- **Animated SVG Highway**: Features a moving cyber pulse / drone along an S-curve road connecting 7 stations:
+  1. *Station 01*: IT Foundations & Networking
+  2. *Station 02*: Reconnaissance & Network Scanning
+  3. *Station 03*: Web Application Security & OWASP Top 10
+  4. *Station 04*: System Exploitation & Active Directory
+  5. *Station 05*: SOC Defense, SIEM & Threat Hunting
+  6. *Station 06*: Reverse Engineering & Malware Analysis
+  7. *Station 07*: Cloud Security, Zero Trust & CISO Elite
+- **Animation Controls**: Real-time Play/Pause motion control, station step-forward / step-back buttons, and variable playback speeds (0.5x, 1x, 2x, 4x).
+- **Specialized Career Pathways**: Toggleable tracks for **All-Rounder**, **Offensive Red Team**, and **Defensive Blue Team**.
+- **Station Inspector**: Includes skill checklists with local progress saving (`localStorage`), estimated duration, target industry certifications (e.g. CompTIA Security+, OSCP, CISSP), and direct lab navigation links.
+
+---
+
 ## 🚀 Setup & Installation Manual
 
 ### Prerequisites
@@ -200,11 +228,11 @@ cp .env.example .env
 
 Example `.env` configuration:
 ```env
-PORT=3000
+PORT=put it here
 NODE_ENV=development
 JWT_SECRET=cybernexus_super_secret_jwt_key_2026
-GEMINI_API_KEY=your_google_gemini_api_key_here
-MONGODB_URI=mongodb://localhost:27017/cybernexus
+API_KEY=api_key_here
+MONGODB_URI=mongodb://localhost:port/projectname
 ```
 
 ### 2. Dependency Installation
@@ -216,7 +244,7 @@ npm install
 ```bash
 npm run dev
 ```
-Navigate to `http://localhost:3000` in your web browser.
+Navigate to `http://localhost:Port` in your web browser.
 
 ### 4. Compiling & Running Production Build
 ```bash
@@ -224,13 +252,6 @@ npm run build
 npm run start
 ```
 
----
 
-## 📄 Exporting Documentation to PDF
 
-To export this documentation into an official PDF document:
-1. Open this file (`CYBER_NEXUS_FULL_GUIDE.md`) in any Markdown viewer or browser.
-2. Press **Ctrl + P** (Windows/Linux) or **Cmd + P** (macOS).
-3. Select **Save as PDF** as the print destination.
-4. Enable **Background Graphics** in options to preserve dark-theme styling, then click **Save**.
 
