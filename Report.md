@@ -8,8 +8,10 @@
 **AI Platform:** Google Gemini  
 **Report Type:** Professional Soutenance Report  
 **Year:** 2026
-**Video Explanation** : https://drive.google.com/file/d/1RIBSghK2lXC5f1CD8dQ_ERw64uXeEJgI/view?usp=sharing
 ---
+
+**Video Explanation** : https://drive.google.com/file/d/1RIBSghK2lXC5f1CD8dQ_ERw64uXeEJgI/view?usp=sharing
+
 
 ## 1. Executive Summary
 
