@@ -1,5 +1,7 @@
+version: '3.8'
+
 services:
-  # 1. CyberNexus Full-Stack Web App
+  # 1. CyberNexus Full-Stack Web App (Express API + React Client SPA)
   web:
     build:
       context: .
@@ -8,13 +10,13 @@ services:
     container_name: cybernexus-web
     restart: always
     ports:
-      - "${HOST_PORT:-3000}:3000"
+      - "3000:3000"
     environment:
       - NODE_ENV=production
       - PORT=3000
-      - MONGODB_URI=your mongo URL
-      - REDIS_URL=Your Redis URL
-      - SESSION_SECRET=${SESSION_SECRET}
+      - MONGODB_URI=mongodb://mongodb:27017/cyber_nexus
+      - REDIS_URL=redis://redis:6379
+      - SESSION_SECRET=cyber_nexus_docker_secret_production_key_123
     depends_on:
       - mongodb
       - redis
@@ -24,6 +26,8 @@ services:
     image: mongo:6.0
     container_name: cybernexus-mongodb
     restart: always
+    ports:
+      - "27017:27017"
     volumes:
       - mongodb_data:/data/db
 
@@ -32,6 +36,8 @@ services:
     image: redis:7.0-alpine
     container_name: cybernexus-redis
     restart: always
+    ports:
+      - "6379:6379"
     volumes:
       - redis_data:/data
 
@@ -40,3 +46,4 @@ volumes:
     driver: local
   redis_data:
     driver: local
+
