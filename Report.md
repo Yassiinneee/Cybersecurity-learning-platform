@@ -12,6 +12,10 @@
 
 **Video Explanation** : https://drive.google.com/file/d/1RIBSghK2lXC5f1CD8dQ_ERw64uXeEJgI/view?usp=sharing
 
+---
+
+**Public URL** : https://cybernexus-342763036190.europe-west2.run.app
+
 
 ## 1. Executive Summary
 
